@@ -21,7 +21,7 @@ main {
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 139px);
+  /*height: calc(100vh - 139px);*/
 }
 
 .content {
@@ -71,6 +71,9 @@ input {
   width: 100%;
   border: solid black 2px;
   border-radius: 2px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-width: 40em;
 }
 
 .scores-list ul li {
@@ -111,4 +114,15 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
+}
+
+wc-toast-item {
+  --wc-toast-background: red;
+  --wc-toast-max-width: 350px;
+  --wc-toast-stroke: #2a2a32;
+  --wc-toast-color: #000;
+  --wc-toast-font-family: 'Roboto', sans-serif;
+  --wc-toast-font-size: 16px;
+  --wc-toast-border-radius: 8px;
+  --wc-toast-content-margin: 4px 10px;
 }

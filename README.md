@@ -8,7 +8,7 @@ Git/GitHub flow, webpack, linters, and workflows.
   <img src="logo.png" alt="logo" width="140"  height="auto"/>
   <br/>
 
-  <h3><b>Microverse Leaderboard</b></h3>
+  <h3><b>Leaderboard: hit the API</b></h3>
 
 </div>
 
@@ -42,7 +42,7 @@ Git/GitHub flow, webpack, linters, and workflows.
 
 > Describe your project in 1 or 2 sentences.
 
-**[Leaderboard]** website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
+**[Leaderboard]** - In this activity you will continue working on the Leaderboard list app, sending and receiving data from/to the Leaderboard API.
 
 ## 🛠 Built With <a name="built-with"></a>
 
