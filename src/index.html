@@ -3,30 +3,64 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Leaderboard</title>
     </head>
     <body>
+        <header>
+            <h1>Leaderboard</h1>
+        </header>
         <main>
-            <section>
-                <div class="selected-list">
-                    <div class="list-header">
-                        <h1>sample</h1>
+            <div class="content">
+                <section>
+                    <div class="scores">
+                        <div class="scores-top">
+                            <span>recent scores</span>
+                            <input type="button" value="Refresh">
+                        </div>
+                        <div class="scores-list">
+                            <ul>
+                                <li>
+                                    <span>Name</span>
+                                    <span>100</span>
+                                </li>
+                                <li>
+                                    <span>Name</span>
+                                    <span>20</span>
+                                </li>
+                                <li>
+                                    <span>Name</span>
+                                    <span>50</span>
+                                </li>
+                                <li>
+                                    <span>Name</span>
+                                    <span>78</span>
+                                </li>
+                                <li>
+                                    <span>Name</span>
+                                    <span>125</span>
+                                </li>
+                                <li>
+                                    <span>Name</span>
+                                    <span>77</span>
+                                </li>
+                                <li>
+                                    <span>Name</span>
+                                    <span>42</span>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="list-add">
-                        <form>
-                            <input id="new-item" class="chromeless-input"
-                                placeholder="Add to your list..." type="text">
-                            <input id="submit-new-item" type="submit"
-                                tabindex="-1" value="" title="click this or
-                                press enter to submit">
-                        </form>
-                    </div>
-                    <div class="list-content">
-                        <ul id="item-list" class="items">
-                        </ul>
-                    </div>
-                    <button type="button" class="link-button clear-completed">Clear all completed</button>
-                </div>
-            </section>
+                </section>
+                <section>
+                    <form action="" method="post">
+                        <label for="">Add your Score</label>
+                        <input type="text" name="" id="" placeholder="Your Name">
+                        <input type="text" name="" id="" placeholder="Your Score">
+                        <input type="button" value="Submit">
+                    </form>
+                </section>
+            </div>
         </main>
+        <footer></footer>
     </body>
 </html>
