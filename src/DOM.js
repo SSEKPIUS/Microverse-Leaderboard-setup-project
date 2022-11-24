@@ -9,6 +9,7 @@ const fillScores = (arr) => {
     const span1 = document.createElement('span');
     span1.innerText = value.user;
     const span2 = document.createElement('span');
+    span2.classList.add('score-value');
     span2.innerText = value.score;
     li.appendChild(span1);
     li.appendChild(span2);

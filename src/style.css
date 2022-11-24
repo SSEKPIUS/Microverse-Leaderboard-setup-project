@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 0;
   position: relative;
+  background: url('./bg.png');
+  background-size: cover;
+  color: rgb(58, 57, 57);
 }
 
 header {
@@ -12,8 +15,28 @@ header {
 
 h1 {
   margin: 0;
-  font-size: xxx-large;
   padding: 0.5em;
+  transform: translate(0%, 0%);
+  text-transform: uppercase;
+  font-family: verdana;
+  font-size: 4em;
+  font-weight: 700;
+  color: #f5f5f5;
+  text-shadow:
+    1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191,
+    1px 6px 1px #919191,
+    1px 7px 1px #919191,
+    1px 8px 1px #919191,
+    1px 9px 1px #919191,
+    1px 10px 1px #919191,
+    1px 18px 6px rgba(16, 16, 16, 0.4),
+    1px 22px 10px rgba(16, 16, 16, 0.2),
+    1px 25px 35px rgba(16, 16, 16, 0.2),
+    1px 30px 60px rgba(16, 16, 16, 0.4);
 }
 
 main {
@@ -27,6 +50,10 @@ main {
 .content {
   display: flex;
   gap: 2em;
+  padding: 1em;
+  background-color: #f5f5f578;
+  border-radius: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
 }
 
 .content section {
@@ -46,9 +73,10 @@ main {
 .scores-list {
   max-height: calc(100vh - 500px);
   overflow-y: scroll;
-  border: solid black 2px;
-  border-radius: 5px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.17) 0 -23px 25px 0 inset, rgba(0, 0, 0, 0.15) 0 -36px 30px 0 inset, rgba(0, 0, 0, 0.1) 0 -79px 40px 0 inset, rgba(0, 0, 0, 0.06) 0 2px 1px, rgba(0, 0, 0, 0.09) 0 4px 2px, rgba(0, 0, 0, 0.09) 0 8px 4px, rgba(0, 0, 0, 0.09) 0 16px 8px, rgba(0, 0, 0, 0.09) 0 32px 16px;
   margin-top: 2em;
+  background-color: white;
 }
 
 .scores-top span {
@@ -95,7 +123,18 @@ input {
 }
 
 .scores-list ul li:nth-child(even) {
-  background: rgba(128, 128, 128, 0.469);
+  background: rgba(128, 128, 128, 0.2);
+}
+
+.score-value {
+  color: #000;
+  font-weight: bolder;
+}
+
+.score-value::before {
+  content: "*";
+  color: red;
+  font-weight: bold;
 }
 
 form {
@@ -110,17 +149,24 @@ form label {
   margin-right: 4em;
 }
 
+input[type="text"],
+input[type="number"] {
+  padding-left: 1em;
+}
+
 input[type="button"],
 input[type="submit"] {
   width: 7em;
+  border: blue solid 1px;
+  background: white;
+  color: black;
+  font-size: medium;
 }
 
-footer {
-  background: rgb(0 0 0 / 18%);
-  height: 2em;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
+input[type="button"]:hover,
+input[type="submit"]:hover {
+  background: blue;
+  color: white;
 }
 
 wc-toast-item {
