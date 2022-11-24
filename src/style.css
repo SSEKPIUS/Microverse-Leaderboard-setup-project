@@ -21,8 +21,7 @@ main {
   width: 100%;
   justify-content: center;
   align-items: center;
-
-  /* height: calc(100vh - 139px); */
+  height: calc(100vh - 139px);
 }
 
 .content {
@@ -42,6 +41,14 @@ main {
 .scores-list {
   position: relative;
   width: 100%;
+}
+
+.scores-list {
+  max-height: calc(100vh - 500px);
+  overflow-y: scroll;
+  border: solid black 2px;
+  border-radius: 5px;
+  margin-top: 2em;
 }
 
 .scores-top span {
@@ -68,10 +75,8 @@ input {
 .scores-list ul {
   list-style: none;
   padding: 0;
-  margin: 2em 0 0 0;
+  margin: 0;
   width: 100%;
-  border: solid black 2px;
-  border-radius: 2px;
   overflow-x: hidden;
   overflow-y: scroll;
   max-width: 40em;

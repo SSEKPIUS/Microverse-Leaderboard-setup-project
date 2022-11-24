@@ -3,7 +3,7 @@ import { toast } from 'wc-toast';
 import { fetch } from './api.js';
 import { fillScores, getHash, addScore } from './DOM.js';
 
-async function refreshDom() {
+const refreshDom = async () => {
   await getHash
     .then(
       (resolved) => {
