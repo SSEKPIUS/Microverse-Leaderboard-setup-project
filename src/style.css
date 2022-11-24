@@ -81,9 +81,10 @@ main {
 
 .scores-top span {
   font-size: x-large;
-  text-transform: capitalize;
+  text-transform: uppercase;
   white-space: nowrap;
   margin-right: 7em;
+  color: blue;
 }
 
 input {
@@ -147,6 +148,8 @@ form label {
   font-size: x-large;
   white-space: nowrap;
   margin-right: 4em;
+  color: blue;
+  text-transform: uppercase;
 }
 
 input[type="text"],
