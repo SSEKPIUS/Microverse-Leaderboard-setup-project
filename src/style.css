@@ -21,7 +21,8 @@ main {
   width: 100%;
   justify-content: center;
   align-items: center;
-  /*height: calc(100vh - 139px);*/
+
+  /* height: calc(100vh - 139px); */
 }
 
 .content {
