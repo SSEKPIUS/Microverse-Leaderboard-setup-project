@@ -1,7 +1,6 @@
-import { getKey } from './api.js';
+import { getKey, post } from './api.js';
 
 const fillScores = (arr) => {
-  console.log(arr);
   if (arr.length === 0) return;
   const ul = document.querySelector('ul');
   ul.innerHTML = '';
@@ -18,17 +17,32 @@ const fillScores = (arr) => {
 };
 
 const getHash = new Promise((resolve, reject) => {
-  const readKEY = () => (localStorage.hasOwnProperty('_KEY') ? JSON.parse(localStorage.getItem('_KEY')) : null);
+  const readKEY = (localStorage.hasOwnProperty('_KEY') ? localStorage.getItem('_KEY') : null);
   if (!readKEY) {
     getKey
-      .then()
-      .catch();
+      .then(
+        (resolved) => {
+          localStorage.setItem('_KEY', resolved);
+          resolve(resolved);
+        },
+        (rejected) => reject(rejected),
+      );
+  } else {
+    resolve(readKEY);
   }
-
-  setTimeout(() => {
-    resolve('xx');
-  }, 30);
-  // reject();
 });
 
-export { fillScores, getHash };
+const addScore = (e, key) => new Promise((resolve, reject) => {
+  const name = e.target.querySelector('#name').value;
+  const score = e.target.querySelector('#score').value;
+  post(name, score, key)
+    .then(
+      (resolved) => {
+        e.target.reset();
+        resolve(resolved);
+      },
+      (rejected) => reject(rejected),
+    );
+});
+
+export { fillScores, getHash, addScore };

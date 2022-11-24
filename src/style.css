@@ -104,7 +104,8 @@ form label {
   margin-right: 4em;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
   width: 7em;
 }
 

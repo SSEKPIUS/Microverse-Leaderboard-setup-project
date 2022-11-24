@@ -11,23 +11,26 @@ const fetch = (key) => new Promise((resolve, reject) => {
   });
 });
 
-const post = (args) => {
+const post = (name, score, key) => new Promise((resolve, reject) => {
+  axios.post(`${baseUrl}games/${key}/scores/`, {
+    user: name,
+    score,
+  })
+    .then((response) => resolve(response))
+    .catch((err) => reject(new Error(err)));
+});
 
-};
-
-const getKey = () => axios.post(`${baseUrl}games/`, {
-  params: {
+const getKey = new Promise((resolve, reject) => {
+  axios.post(`${baseUrl}games/`, {
     name: 'My cool new game',
-  },
-})
-  .then((response) => {
-    console.log(response);
+  }).then((response) => {
+    const { result } = response.data;
+    const key = result.split('Game with ID:')[1].replace('added.', '').trim();
+    resolve(key);
   })
-  .catch((error) => {
-    console.log(error);
-  })
-  .then(() => {
-    // always executed
-  });
+    .catch((error) => {
+      reject(new Error(error));
+    });
+});
 
 export { fetch, post, getKey };
