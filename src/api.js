@@ -1,19 +1,36 @@
-const scores = [
-  { id: 0, name: 'pius', score: 10 },
-  { id: 1, name: 'mark', score: 20 },
-  { id: 2, name: 'mathew', score: 50 },
-  { id: 3, name: 'james', score: 50 },
-  { id: 4, name: 'paul', score: 30 },
-  { id: 5, name: 'peter', score: 50 },
-  { id: 6, name: 'abiua', score: 40 },
-];
+const axios = require('axios').default;
 
-const fetch = () => {
+const baseUrl = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
 
-};
+const fetch = (key) => new Promise((resolve, reject) => {
+  const response = axios.get(`${baseUrl}games/${key}/scores/`);
+  response.then((res) => {
+    resolve(res.data.result);
+  }).catch((err) => {
+    reject(new Error(`No Scores to list: ${err}`));
+  });
+});
 
-const post = (args) => {
+const post = (name, score, key) => new Promise((resolve, reject) => {
+  axios.post(`${baseUrl}games/${key}/scores/`, {
+    user: name,
+    score,
+  })
+    .then((response) => resolve(response))
+    .catch((err) => reject(new Error(err)));
+});
 
-};
+const getKey = new Promise((resolve, reject) => {
+  axios.post(`${baseUrl}games/`, {
+    name: 'My cool new game',
+  }).then((response) => {
+    const { result } = response.data;
+    const key = result.split('Game with ID:')[1].replace('added.', '').trim();
+    resolve(key);
+  })
+    .catch((error) => {
+      reject(new Error(error));
+    });
+});
 
-export { scores, fetch, post };
+export { fetch, post, getKey };

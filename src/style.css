@@ -43,6 +43,14 @@ main {
   width: 100%;
 }
 
+.scores-list {
+  max-height: calc(100vh - 500px);
+  overflow-y: scroll;
+  border: solid black 2px;
+  border-radius: 5px;
+  margin-top: 2em;
+}
+
 .scores-top span {
   font-size: x-large;
   text-transform: capitalize;
@@ -67,10 +75,11 @@ input {
 .scores-list ul {
   list-style: none;
   padding: 0;
-  margin: 2em 0 0 0;
+  margin: 0;
   width: 100%;
-  border: solid black 2px;
-  border-radius: 2px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-width: 40em;
 }
 
 .scores-list ul li {
@@ -101,7 +110,8 @@ form label {
   margin-right: 4em;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
   width: 7em;
 }
 
@@ -111,4 +121,15 @@ footer {
   width: 100%;
   position: fixed;
   bottom: 0;
+}
+
+wc-toast-item {
+  --wc-toast-background: red;
+  --wc-toast-max-width: 350px;
+  --wc-toast-stroke: #2a2a32;
+  --wc-toast-color: #000;
+  --wc-toast-font-family: 'Roboto', sans-serif;
+  --wc-toast-font-size: 16px;
+  --wc-toast-border-radius: 8px;
+  --wc-toast-content-margin: 4px 10px;
 }
